@@ -117,7 +117,7 @@
 
                 <div class="col-md-4">
                     <div class="card shadow border border-0 rounded-0 mb-3">
-                        <img src="{{asset('/')}}website/images/banner1.jpg" style="height: 250px;" class="card-img-top" alt="">
+                        <img src="{{asset('/')}}website/images/abc.png" style="height: 250px;" class="card-img-top" alt="">
                         <div class="card-body">
                             <h4>Responsive Web Design</h4>
                             <h5>Alex Benjamine</h5>
@@ -131,7 +131,7 @@
 
                 <div class="col-md-4">
                     <div class="card shadow border border-0 rounded-0 mb-3">
-                        <img src="{{asset('/')}}website/images/laravel.jpg" style="height: 250px;" class="card-img-top" alt="">
+                        <img src="{{asset('/')}}website/images/swd.png" style="height: 250px;" class="card-img-top" alt="">
                         <div class="card-body">
                             <h4>Web Development</h4>
                             <h5>Alice Clark</h5>
@@ -145,7 +145,7 @@
 
                 <div class="col-md-4">
                     <div class="card shadow border border-0 rounded-0 mb-3">
-                        <img src="{{asset('/')}}website/images/wbslider6.jpg" style="height: 250px;" class="card-img-top" alt="">
+                        <img src="{{asset('/')}}website/images/wbslider2.jpg" style="height: 250px;" class="card-img-top" alt="">
                         <div class="card-body">
                             <h4>Android App Development</h4>
                             <h5>Sayeed Asadul</h5>
@@ -160,4 +160,49 @@
             </div>
         </div>
     </section>
+
+    {{--    Footer Section --}}
+    <footer style="background-color: #0b0b0b">
+        <section class="py-5">
+            <div class="container text-light">
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <h4> Lorem ipsum dolor sit amet. </h4>
+                        <p style="text-align: justify">Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem dolorum eligendi laboriosam obcaecati? Beatae mollitia nulla reiciendis suscipit veniam. sit amet, consectetur adipisicing elit. Autem dicta eius iusto laboriosam provident sequi sunt tempore vero? Sit, unde!</p>
+                    </div>
+
+                    <div class="col-md-4 ps-5">
+                        <h4>Social links</h4>
+                        <ul class="nav navbar-nav">
+                            <li><a href="" class="nav-link text-secondary">Facebok</a></li>
+                            <li><a href="" class="nav-link text-secondary">Whatsaap</a></li>
+                            <li><a href="" class="nav-link text-secondary">Twitter</a></li>
+                            <li><a href="" class="nav-link text-secondary">Linkedin</a></li>
+                            <li><a href="" class="nav-link text-secondary">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>Contact With Us</h4>
+
+                        <p class="pt-2">Office Address : </p>
+                        <address>
+                            House # 27, Road # 20, West Sewrapara, Mirpur.
+                        </address>
+                        <p class="pt-2">Headquarters: </p>
+                        <address>
+                            House # 232, Road # 220, Karwon Bazar, Dhaka.
+                        </address>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    </footer>
+
 @endsection
