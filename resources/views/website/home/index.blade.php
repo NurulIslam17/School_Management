@@ -63,7 +63,7 @@
                             <p>Tk. 1200</p>
                             <p>Starting: 12.12.2022</p>
                             <hr>
-                            <a href="" class="btn btn-success rounded-0">Details</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                             <p>Tk. 5200</p>
                             <p>Starting: 01.01.2023</p>
                             <hr>
-                            <a href="" class="btn btn-success rounded-0">Details</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                             <p>Tk. 4200</p>
                             <p>Starting: 12.12.2022</p>
                             <hr>
-                            <a href="" class="btn btn-success rounded-0">Details</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                             <p>Tk. 1200</p>
                             <p>Starting: 12.12.2022</p>
                             <hr>
-                            <a href="" class="btn btn-success rounded-0">Details</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
                         </div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                             <p>Tk. 5200</p>
                             <p>Starting: 01.01.2023</p>
                             <hr>
-                            <a href="" class="btn btn-success rounded-0">Details</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
                         </div>
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                             <p>Tk. 4200</p>
                             <p>Starting: 12.12.2022</p>
                             <hr>
-                            <a href="" class="btn btn-success rounded-0">Details</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
                         </div>
                     </div>
                 </div>

@@ -11,6 +11,11 @@ class HomeController extends Controller
         return view('website.home.index');
     }
 
+    public function courseDetails()
+    {
+        return view('website.home.details');
+    }
+
     public function about()
     {
         return view('website.about.index');

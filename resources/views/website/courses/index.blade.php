@@ -15,7 +15,7 @@
         </div>
     </section>
 
-    <section class="py-5" style="background-color: #faebeb">
+    <section class="py-5" style="background-color: #f6f1f1">
         <div class="container">
             <div class="row">
 
@@ -29,7 +29,7 @@
                             <p>Price: 1233 Tk</p>
                             <p>Starting Date: 23-12-2022</p>
                             <hr>
-                            <a href="#" class="btn btn-outline-success rounded-0">View More</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
 
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                             <p>Price: 1233 Tk</p>
                             <p>Starting Date: 23-12-2022</p>
                             <hr>
-                            <a href="#" class="btn btn-outline-success rounded-0">View More</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
 
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                             <p>Price: 1233 Tk</p>
                             <p>Starting Date: 23-12-2022</p>
                             <hr>
-                            <a href="#" class="btn btn-outline-success rounded-0">View More</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
 
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                             <p>Price: 1233 Tk</p>
                             <p>Starting Date: 23-12-2022</p>
                             <hr>
-                            <a href="#" class="btn btn-outline-success rounded-0">View More</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
 
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                             <p>Price: 1233 Tk</p>
                             <p>Starting Date: 23-12-2022</p>
                             <hr>
-                            <a href="#" class="btn btn-outline-success rounded-0">View More</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
 
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                             <p>Price: 1233 Tk</p>
                             <p>Starting Date: 23-12-2022</p>
                             <hr>
-                            <a href="#" class="btn btn-outline-success rounded-0">View More</a>
+                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
 
                         </div>
                     </div>

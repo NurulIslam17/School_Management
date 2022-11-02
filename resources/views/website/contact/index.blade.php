@@ -14,8 +14,7 @@
                     <div class="card card-body rounded-0">
                         <div class="row">
                             <div class="col-md-6 px-0 mx-0">
-
-                                <img src="{{asset('/')}}website/images/contactus.jpg" class="py-0 my-0 w-100 h-100" alt="">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7301.608628509339!2d90.3730577!3d23.789981700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0b58914ed45%3A0xb88612d8fbfb11a9!2sWest%20Shewrapara%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1667375057404!5m2!1sen!2sbd" class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                             </div>
                             <div class="col-md-6 shadow d-flex align-items-center">
@@ -48,7 +47,7 @@
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label class="col-md-4" for="">Password</label>
+                                            <label class="col-md-4" for="">Your Message</label>
                                             <div class="col-md-8">
                                                 <textarea name="your_message" class="form-control rounded-0" id="" cols="30" rows="5"></textarea>
                                             </div>
