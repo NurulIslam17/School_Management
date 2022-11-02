@@ -25,7 +25,7 @@
                             <div class="col-md-6 shadow d-flex align-items-center">
                                 <div class="card card-body rounded-0">
 
-                                    <h3 class="text-center">Register</h3>
+                                    <h3 class="text-center">Registration Form</h3>
                                     <hr>
 
                                     <form action="">
