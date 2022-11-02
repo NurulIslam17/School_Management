@@ -13,7 +13,7 @@ class HomeController extends Controller
 
     public function courseDetails()
     {
-        return view('website.home.details');
+        return view('website.courses.details');
     }
 
     public function about()

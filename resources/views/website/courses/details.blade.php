@@ -32,11 +32,11 @@
                                 <div class="col-md-6">
                                     <h2>Course Name</h2>
                                     <h4>Teacher Name</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur ipsum perspiciatis ullam. Ab debitis dolores ducimus et fuga maiores maxime minus, odio quibusdam quos sapiente tempore veniam vero voluptatem.</p>
+                                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur ipsum perspiciatis ullam. Ab debitis dolores ducimus et fuga maiores maxime minus, odio quibusdam quos sapiente tempore veniam vero voluptatem.</p>
                                     <p>Price: 2333 Tk</p>
                                     <p>Starting date: 12-12-2022</p>
                                     <hr>
-                                    <a href="#" class="btn btn-success rounded-0">Buy Now</a>
+                                    <a href="#" class="btn btn-success rounded-0">Enroll Now</a>
                                 </div>
                             </div>
 
