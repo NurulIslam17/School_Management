@@ -25,4 +25,15 @@ class HomeController extends Controller
     {
         return view('website.contact.index');
     }
+    public function fontLogin()
+    {
+        return view('website.auth.login');
+    }
+
+    public function fontRegister()
+    {
+        return view('website.auth.register');
+    }
+
+
 }

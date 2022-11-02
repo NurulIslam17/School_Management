@@ -14,7 +14,7 @@
                    <p style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet  aspernatur commodi eveniet in libero nihil optio suscipit veniam, veritatis. Accusamus <br>alias architecto consequatur enim expedita facere incidunt minima minus neque nulla odit omnis, pariatur perferendis placeat rem tempore voluptas! Esse et itaque minus nesciunt quibusdam reiciendis sequi soluta tempora ore magnam numquam quod reiciendis saepe. Aperiam assumenda impedit labore libero nesciunt nobis quae! A ad adipisci aliquam, architecto aut blanditiis consequatur cum dolores eligendi facilis labore laborum maxime minus mollitia nihil nostrum omnis provident quam quas quos ratione sapiente velit voluptates.</p>
                </div>
                <div class="col-md-6">
-                   <img src="{{asset('/')}}website/images/who.jpg" class="w-100" alt="">
+                   <img src="{{asset('/')}}website/images/who.jpg" class="w-100 animated bounce infinite" alt="">
                </div>
            </div>
 
