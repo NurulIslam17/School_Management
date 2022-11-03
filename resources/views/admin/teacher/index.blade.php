@@ -11,8 +11,9 @@
                     <div class="card rounded-0">
                         <div class="card-body">
                             <h2 class="text-center mb-4">Create New Teacher</h2>
+                            <p class="text-center text-success">{{session('success')}}</p>
 
-                            <form action="#" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('create.teacher') }}" method="post" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-group row mb-4">
@@ -41,11 +42,17 @@
                                         <input type="password" name="t_password" class="form-control" id="horizontal-password-input">
                                     </div>
                                 </div>
+                                <div class="form-group row mb-4">
+                                    <label for="horizontal-password-input" class="col-sm-3 col-form-label">Description</label>
+                                    <div class="col-sm-9">
+                                        <textarea name="t_description" class="form-control" id="" cols="30" rows="5"></textarea>
+                                    </div>
+                                </div>
 
                                 <div class="form-group row mb-4">
                                     <label for="horizontal-password-input" class="col-sm-3 col-form-label">Image</label>
                                     <div class="col-sm-9">
-                                        <input type="file" name="t_image">
+                                        <input type="file" name="t_image" class="form-control-file">
                                     </div>
                                 </div>
 

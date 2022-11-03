@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -14,5 +15,11 @@ class TeacherController extends Controller
     public  function manage()
     {
         return view('admin.teacher.manage');
+    }
+
+    public  function createTeacher(Request $request)
+    {
+        Teacher::saveTeacher($request);
+        return back()->with('success','Teacher Created Successfully');
     }
 }

@@ -20,4 +20,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/add-teacher',[TeacherController::class,'index'])->name('add.teacher');
     Route::get('/manage-teacher',[TeacherController::class,'manage'])->name('manage.teacher');
+
+    Route::post('/createTeacher',[TeacherController::class,'createTeacher'])->name('create.teacher');
 });
