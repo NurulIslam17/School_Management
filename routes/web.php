@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
+use App\Http\Controllers\TeacherDashboardController;
 
 
 Route::get('/',[HomeController::class,'index'])->name('home');
@@ -17,6 +18,10 @@ Route::get('/course-details',[HomeController::class,'courseDetails'])->name('cou
 
 
 Route::get('/teacher/login',[TeacherAuthController::class,'loginForm'])->name('teacher.login');
+Route::post('/teacher/login/check',[TeacherAuthController::class,'teacherLoginCheck'])->name('teacher.login.check');
+
+
+Route::get('/teacher/dashboard',[TeacherDashboardController::class,'index'])->name('teacher.dashboard');
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {

@@ -55,7 +55,9 @@
                             </a>
                         </div>
                         <div class="p-2">
-                            <form class="form-horizontal" method="post" action="{{ route('login') }}">
+
+                            <p class="text-center text-danger">{{ Session::get('message') }}</p>
+                            <form class="form-horizontal" method="post" action="{{ route('teacher.login.check') }}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="username">Email</label>
