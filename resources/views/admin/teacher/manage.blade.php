@@ -12,7 +12,7 @@
                     <h4 class="text-center">All Teacher Information</h4>
                     <p class="text-center text-success">{{ Session::get('message') }}</p>
 
-                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                         <tr class="bg-info">
                             <th>Sl</th>
