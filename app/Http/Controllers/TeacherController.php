@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use function Symfony\Component\String\b;
 
 class TeacherController extends Controller
 {
@@ -23,6 +24,13 @@ class TeacherController extends Controller
     {
         Teacher::saveTeacher($request);
         return back()->with('success','Teacher Created Successfully');
+    }
+
+    //deleteTeacher
+    public function deleteTeacher($id)
+    {
+        Teacher::deleteTeacher($id);
+        return back()->with('message','Teacher Deleted');
     }
 
     //changeStatus

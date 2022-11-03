@@ -9,6 +9,7 @@ class Teacher extends Model
 {
     use HasFactory;
     private static $teacher,$image,$imageName,$imageDir,$imageUrl;
+    private static $deleteData;
 
     public static  function getImageUrl($request)
     {
@@ -34,5 +35,20 @@ class Teacher extends Model
         self::$teacher->t_image      = self::getImageUrl($request);
 
         self::$teacher->save();
+    }
+
+
+    public static function deleteTeacher($id)
+    {
+        self::$deleteData = Teacher::find($id);
+
+        if(self::$deleteData->t_image)
+        {
+            unlink(self::$deleteData->t_image);
+            self::$deleteData->delete();
+        }
+        else{
+            self::$deleteData->delete();
+        }
     }
 }

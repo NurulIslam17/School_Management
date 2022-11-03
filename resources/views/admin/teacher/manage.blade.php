@@ -41,7 +41,7 @@
                                             <i class="fa fa-edit btn btn-success rounded-0"></i>
                                         </a>
 
-                                        <a href="">
+                                        <a href="{{route('delete.teacher',$teacher->id)}}">
                                             <i class="fa fa-trash btn btn-danger rounded-0"></i>
                                         </a>
                                         <a href="{{route('change.status',$teacher->id)}}">
