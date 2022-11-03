@@ -10,6 +10,7 @@
                 <div class="card-body shadow">
 
                     <h4 class="text-center">All Teacher Information</h4>
+                    <p class="text-center text-success">{{ Session::get('message') }}</p>
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
@@ -35,7 +36,18 @@
                                     <td>{{$teacher->t_email}}</td>
                                     <td>{{$teacher->t_phone}}</td>
                                     <td>{{$teacher->status == 1 ? 'Active' : 'Inactive'}}</td>
-                                    <td>{{$teacher->t_name}}</td>
+                                    <td>
+                                        <a href="">
+                                            <i class="fa fa-edit btn btn-success rounded-0"></i>
+                                        </a>
+
+                                        <a href="">
+                                            <i class="fa fa-trash btn btn-danger rounded-0"></i>
+                                        </a>
+                                        <a href="{{route('change.status',$teacher->id)}}">
+                                            <i class="fa fa-{{$teacher->status == 1 ? 'check' : 'lock'}}  btn btn-{{$teacher->status == 1 ? 'warning' : 'dark'}}  rounded-0"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

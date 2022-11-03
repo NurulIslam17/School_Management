@@ -15,7 +15,7 @@ class TeacherController extends Controller
     public  function manage()
     {
         return view('admin.teacher.manage',[
-            'teachers' => Teacher::latest()->where('status',1)->get(),
+            'teachers' => Teacher::latest()->get(),
         ]);
     }
 
@@ -23,5 +23,22 @@ class TeacherController extends Controller
     {
         Teacher::saveTeacher($request);
         return back()->with('success','Teacher Created Successfully');
+    }
+
+    //changeStatus
+    public function changeStatus($id)
+    {
+        $status = Teacher::find($id);
+        if($status->status == 1)
+        {
+            $status->status = 0;
+            $status->save();
+        }
+        else{
+            $status->status = 1;
+            $status->save();
+        }
+
+        return back()->with('message','Status Changed');
     }
 }

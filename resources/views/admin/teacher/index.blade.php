@@ -11,7 +11,7 @@
                     <div class="card rounded-0">
                         <div class="card-body">
                             <h2 class="text-center mb-4">Create New Teacher</h2>
-                            <p class="text-center text-success">{{session('success')}}</p>
+                            <h5 class="text-center text-success">{{session('success')}}</h5>
 
                             <form action="{{ route('create.teacher') }}" method="post" enctype="multipart/form-data">
                                 @csrf
