@@ -19,6 +19,7 @@ Route::get('/course-details',[HomeController::class,'courseDetails'])->name('cou
 
 Route::get('/teacher/login',[TeacherAuthController::class,'loginForm'])->name('teacher.login');
 Route::post('/teacher/login/check',[TeacherAuthController::class,'teacherLoginCheck'])->name('teacher.login.check');
+Route::post('/teacher/logout',[TeacherAuthController::class,'teacherLogout'])->name('teacher.logout');
 
 
 Route::get('/teacher/dashboard',[TeacherDashboardController::class,'index'])->name('teacher.dashboard');
