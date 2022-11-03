@@ -22,6 +22,8 @@ Route::post('/teacher/login/check',[TeacherAuthController::class,'teacherLoginCh
 
 
 Route::get('/teacher/dashboard',[TeacherDashboardController::class,'index'])->name('teacher.dashboard');
+Route::get('/teacher/add-course',[TeacherDashboardController::class,'addCourse'])->name('add.course');
+Route::get('/teacher/manage-course',[TeacherDashboardController::class,'manageCourse'])->name('manage.course');
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {

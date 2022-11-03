@@ -8,6 +8,17 @@ class TeacherDashboardController extends Controller
 {
     public function index()
     {
-        return 'Teacher Dashboard';
+        return view('teacher.home.index');
     }
+
+    public function addCourse()
+    {
+        return view('teacher.course.index');
+    }
+    public function manageCourse()
+    {
+        return view('teacher.course.manage');
+    }
+
+
 }
