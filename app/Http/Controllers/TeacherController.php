@@ -14,7 +14,9 @@ class TeacherController extends Controller
 
     public  function manage()
     {
-        return view('admin.teacher.manage');
+        return view('admin.teacher.manage',[
+            'teachers' => Teacher::latest()->where('status',1)->get(),
+        ]);
     }
 
     public  function createTeacher(Request $request)
