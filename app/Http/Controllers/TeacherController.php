@@ -26,11 +26,30 @@ class TeacherController extends Controller
         return back()->with('success','Teacher Created Successfully');
     }
 
+    //editTeacher
+    public  function editTeacher($id)
+    {
+//        return Teacher::find($id);
+        return view('admin.teacher.edit',[
+            'teacher'=>Teacher::find($id),
+        ]);
+    }
+
+    //updateTeacher
+    public function updateTeacher(Request $request)
+    {
+        $id = $request->update_teacher;
+        Teacher::updateData($request,$id);
+        return redirect()->route('manage.teacher')->with('success','Teacher Updated Successfully');
+
+    }
+
     //deleteTeacher
     public function deleteTeacher($id)
     {
         Teacher::deleteTeacher($id);
-        return back()->with('message','Teacher Deleted');
+        return back()->with('message','Data Deleted');
+
     }
 
     //changeStatus

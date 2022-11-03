@@ -22,6 +22,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/manage-teacher',[TeacherController::class,'manage'])->name('manage.teacher');
 
     Route::post('/create-teacher',[TeacherController::class,'createTeacher'])->name('create.teacher');
+    Route::get('/edit-teacher/{id}',[TeacherController::class,'editTeacher'])->name('edit.teacher');
+    Route::post('/update-teacher',[TeacherController::class,'updateTeacher'])->name('update.teacher');
     Route::get('/delete-teacher/{id}',[TeacherController::class,'deleteTeacher'])->name('delete.teacher');
     Route::get('/change-status/{id}',[TeacherController::class,'changeStatus'])->name('change.status');
 });

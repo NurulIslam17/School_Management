@@ -37,7 +37,7 @@
                                     <td>{{$teacher->t_phone}}</td>
                                     <td>{{$teacher->status == 1 ? 'Active' : 'Inactive'}}</td>
                                     <td>
-                                        <a href="">
+                                        <a href="{{route('edit.teacher',$teacher->id)}}">
                                             <i class="fa fa-edit btn btn-success rounded-0"></i>
                                         </a>
 
