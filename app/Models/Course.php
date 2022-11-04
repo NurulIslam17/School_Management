@@ -52,4 +52,34 @@ class Course extends Model
             self::$course->delete();
         }
     }
+
+
+    //updateCourseData($request,$id)
+
+    public static function updateCourseData($request,$id)
+    {
+        self::$course                = Course::find($id);
+
+        self::$course->c_title       = $request->c_title;
+        self::$course->teacher_id    = Session::get('teacher_id');
+        self::$course->c_fee         = $request->c_fee;
+        self::$course->c_start_date  = $request->c_start_date;
+        self::$course->c_duration    = $request->c_duration;
+
+        if($request->file('c_image'))
+        {
+            if(file_exists(self::$course->c_image))
+            {
+                unlink(self::$course->c_image);
+                self::$course->c_image       = self::saveImage($request);
+            }
+
+        }else{
+            self::$course->c_image       = self::saveImage($request);
+        }
+
+        self::$course->c_description = $request->c_description;
+
+        self::$course->save();
+    }
 }

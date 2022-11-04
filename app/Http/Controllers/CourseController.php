@@ -19,4 +19,20 @@ class CourseController extends Controller
         return back()->with('message','Course Deleted');
 
     }
+
+    //  editCourse
+    public function editCourse($id)
+    {
+        return view('teacher.course.edit',[
+            'course' => Course::find($id),
+        ]);
+    }
+
+    //updateCourse
+    public  function updateCourse(Request $request)
+    {
+        $id = $request->updateId;
+        Course::updateCourseData($request,$id);
+        return redirect()->route('manage.course')->with('message','Course Updated');
+    }
 }

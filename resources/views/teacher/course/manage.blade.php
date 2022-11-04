@@ -42,7 +42,7 @@
                                 <td>{{$course->c_duration}}</td>
                                 <td>{{$course->c_status == 1 ? 'Published' : 'Unpublished'}}</td>
                                 <td>
-                                    <a href="#">
+                                    <a href="{{ route('edit.course',['id'=>$course->id]) }}">
                                         <i class="fa fa-edit btn btn-success rounded-0"></i>
                                     </a>
 
