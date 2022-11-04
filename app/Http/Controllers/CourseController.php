@@ -12,4 +12,11 @@ class CourseController extends Controller
         Course::create($request);
         return back()->with('success','Course Created');
     }
+
+    public function deleteCourse($id)
+    {
+        Course::deleteCourseData($id);
+        return back()->with('message','Course Deleted');
+
+    }
 }

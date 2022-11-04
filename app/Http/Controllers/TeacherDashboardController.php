@@ -22,6 +22,7 @@ class TeacherDashboardController extends Controller
         $coursesWithTeacher = DB::table('courses')
             ->join('teachers','teachers.id','courses.teacher_id')
             ->select('teachers.*','courses.*')
+            ->orderBy('courses.id','DESC')
             ->get();
 
 //        return  $coursesWithTeacher;

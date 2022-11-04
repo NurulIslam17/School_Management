@@ -28,6 +28,8 @@ Route::get('/teacher/add-course',[TeacherDashboardController::class,'addCourse']
 Route::get('/teacher/manage-course',[TeacherDashboardController::class,'manageCourse'])->name('manage.course');
 Route::post('/teacher/create-course',[CourseController::class,'createCourse'])->name('create.course');
 
+Route::get('/teacher/delete-course/{id}',[CourseController::class,'deleteCourse'])->name('delete.course');
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');

@@ -36,4 +36,20 @@ class Course extends Model
 
          self::$course->save();
     }
+
+    //deleteCourseData($id)
+
+    public static function deleteCourseData($id)
+    {
+        self::$course = Course::find($id);
+
+        if(file_exists(self::$course->c_image))
+        {
+            unlink(self::$course->c_image);
+            self::$course->delete();
+        }
+        else{
+            self::$course->delete();
+        }
+    }
 }

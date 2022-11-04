@@ -46,12 +46,10 @@
                                         <i class="fa fa-edit btn btn-success rounded-0"></i>
                                     </a>
 
-                                    <a href="#">
+                                    <a href="{{ route('delete.course',['id'=>$course->id]) }}" onclick="return confirm('Are you sure ?');">
                                         <i class="fa fa-trash btn btn-danger rounded-0"></i>
                                     </a>
-                                    <a href="#">
-                                        <i class="fa fa-{{$course->c_status == 1 ? 'check' : 'lock'}}  btn btn-{{$course->c_status == 1 ? 'warning' : 'dark'}}  rounded-0"></i>
-                                    </a>
+
                                 </td>
                             </tr>
                         @endforeach
