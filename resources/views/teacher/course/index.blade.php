@@ -13,7 +13,7 @@
                             <h2 class="text-center mb-4">Create New Course</h2>
                             <h5 class="text-center text-success">{{session('success')}}</h5>
 
-                            <form action="#" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('create.course') }}" method="post" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-group row mb-4">
@@ -44,17 +44,18 @@
                                 </div>
 
                                 <div class="form-group row mb-4">
-                                    <div class="col-sm-12">
-                                        <textarea name="c_description" class="form-control" id="summernote" style="height: 300px!important;" cols="30" rows="10"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row mb-4">
                                     <label for="horizontal-password-input" class="col-sm-3 col-form-label">Image</label>
                                     <div class="col-sm-9">
                                         <input type="file" name="c_image" class="form-control-file" id="horizontal-password-input">
                                     </div>
                                 </div>
+
+                                <div class="form-group row mb-4">
+                                    <div class="col-sm-12">
+                                        <textarea name="c_description" class="form-control" id="summernote" style="height: 300px!important;" cols="30" rows="10"></textarea>
+                                    </div>
+                                </div>
+
 
                                 <div class="form-group row justify-content-end">
                                     <div class="col-sm-9">
