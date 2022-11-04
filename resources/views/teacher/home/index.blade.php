@@ -43,10 +43,10 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="avatar-md profile-user-wid mb-4">
-                                <img src="{{asset('/')}}admin/assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
+                                <img src="{{asset(Session::get('teacher_image') )}}" style="height: 90px; width: 90px;">
                             </div>
-                            <h5 class="font-size-15 text-truncate">Henry Price</h5>
-                            <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
+                            <h5 class="font-size-15 text-truncate">{{Session::get('teacher_name') }}</h5>
+                            <p class="text-muted mb-0 text-truncate">Engineer</p>
                         </div>
 
                         <div class="col-sm-8">

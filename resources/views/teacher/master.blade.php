@@ -13,6 +13,9 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('/')}}admin/assets/images/favicon.ico">
 
+    <!-- Summernote css -->
+    <link href="{{asset('/')}}admin/assets/libs/summernote/summernote-bs4.min.css" rel="stylesheet" type="text/css" />
+
     <!-- Bootstrap Css -->
     <link href="{{asset('/')}}admin/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
@@ -59,8 +62,7 @@
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle header-profile-user" src="{{asset('/')}}admin/assets/images/users/avatar-1.jpg"
-                             alt="Header Avatar">
+                        <img src="{{asset(Session::get('teacher_image') )}}" style="height: 40px; width: 40px; border-radius: 50%;">
                         <span class="d-none d-xl-inline-block ml-1">{{ Session::get('teacher_name') }}</span>
                         <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                     </button>
@@ -295,6 +297,15 @@
 <script src="{{asset('/')}}admin/assets/libs/apexcharts/apexcharts.min.js"></script>
 
 <script src="{{asset('/')}}admin/assets/js/pages/dashboard.init.js"></script>
+
+<!-- Summernote js -->
+<script src="{{asset('/')}}admin/assets/libs/summernote/summernote-bs4.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+</script>
 
 <!-- App js -->
 <script src="{{asset('/')}}admin/assets/js/app.js"></script>
