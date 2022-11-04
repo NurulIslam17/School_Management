@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Session;
 
 class Course extends Model
 {
@@ -26,6 +27,7 @@ class Course extends Model
     {
          self::$course                = new Course();
          self::$course->c_title       = $request->c_title;
+         self::$course->teacher_id    = Session::get('teacher_id');
          self::$course->c_fee         = $request->c_fee;
          self::$course->c_start_date  = $request->c_start_date;
          self::$course->c_duration    = $request->c_duration;
