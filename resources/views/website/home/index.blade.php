@@ -54,47 +54,21 @@
 
             <div class="row">
 
-                <div class="col-md-4">
-                    <div class="card shadow border border-0 rounded-0 mb-3">
-                        <img src="{{asset('/')}}website/images/banner1.jpg" style="height: 250px;" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h4>Responsive Web Design</h4>
-                            <h5>Alex Benjamine</h5>
-                            <p>Tk. 1200</p>
-                            <p>Starting: 12.12.2022</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
+                @foreach($latestCourses as $latestCourse)
+                    <div class="col-md-3">
+                        <div class="card shadow border border-0 rounded-0 mb-3">
+                            <img src="{{asset($latestCourse->c_image)}}" style="height: 200px;" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h4>{{$latestCourse->c_title}}</h4>
+                                <h5>Instructor : {{ $latestCourse->t_name }}</h5>
+                                <p>Course Fee : {{ $latestCourse->c_fee }}</p>
+                                <p>Starting Date : {{ $latestCourse->c_start_date }}</p>
+                                <hr>
+                                <a href="{{ route('course-details',['id'=>$latestCourse->id] )}}" class="btn btn-success rounded-0">Details</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card shadow border border-0 rounded-0 mb-3">
-                        <img src="{{asset('/')}}website/images/laravel.jpg" style="height: 250px;" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h4>Web Development</h4>
-                            <h5>Alice Clark</h5>
-                            <p>Tk. 5200</p>
-                            <p>Starting: 01.01.2023</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card shadow border border-0 rounded-0 mb-3">
-                        <img src="{{asset('/')}}website/images/wbslider6.jpg" style="height: 250px;" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h4>Android App Development</h4>
-                            <h5>Sayeed Asadul</h5>
-                            <p>Tk. 4200</p>
-                            <p>Starting: 12.12.2022</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
         </div>
@@ -115,47 +89,21 @@
 
             <div class="row">
 
-                <div class="col-md-4">
+                @foreach($latestCourses as $latestCourse)
+                <div class="col-md-3">
                     <div class="card shadow border border-0 rounded-0 mb-3">
-                        <img src="{{asset('/')}}website/images/abc.png" style="height: 250px;" class="card-img-top" alt="">
+                        <img src="{{asset($latestCourse->c_image)}}" style="height: 200px;" class="card-img-top" alt="">
                         <div class="card-body">
-                            <h4>Responsive Web Design</h4>
-                            <h5>Alex Benjamine</h5>
-                            <p>Tk. 1200</p>
-                            <p>Starting: 12.12.2022</p>
+                            <h4>{{$latestCourse->c_title}}</h4>
+                            <h5>Instructor : {{ $latestCourse->t_name }}</h5>
+                            <p>Course Fee : {{ $latestCourse->c_fee }}</p>
+                            <p>Starting Date : {{ $latestCourse->c_start_date }}</p>
                             <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
+                            <a href="{{ route('course-details',['id'=>$latestCourse->id] )}}" class="btn btn-success rounded-0">Details</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="card shadow border border-0 rounded-0 mb-3">
-                        <img src="{{asset('/')}}website/images/react.png" style="height: 250px;" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h4>Web Development</h4>
-                            <h5>Alice Clark</h5>
-                            <p>Tk. 5200</p>
-                            <p>Starting: 01.01.2023</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card shadow border border-0 rounded-0 mb-3">
-                        <img src="{{asset('/')}}website/images/android.png" style="height: 250px;" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h4>Android App Development</h4>
-                            <h5>Sayeed Asadul</h5>
-                            <p>Tk. 4200</p>
-                            <p>Starting: 12.12.2022</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-success rounded-0">Details</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
             </div>
         </div>

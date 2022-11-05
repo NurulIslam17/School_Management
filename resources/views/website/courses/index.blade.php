@@ -19,97 +19,21 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-4">
-                    <div class="card mb-3 rounded-0 border-0 shadow">
-                        <img src="{{asset('/')}}website/images/abc.png" style="height: 200px;" alt="not Found" class="card-img-top rounded-0">
-
-                        <div class="card-body">
-                            <h3>Course 1</h3>
-                            <p>Instructor Name</p>
-                            <p>Price: 1233 Tk</p>
-                            <p>Starting Date: 23-12-2022</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
-
+                @foreach($latestCourses as $latestCourse)
+                    <div class="col-md-3">
+                        <div class="card shadow border border-0 rounded-0 mb-3">
+                            <img src="{{asset($latestCourse->c_image)}}" style="height: 200px;" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h4>{{$latestCourse->c_title}}</h4>
+                                <h5>Instructor : {{ $latestCourse->t_name }}</h5>
+                                <p>Course Fee : {{ $latestCourse->c_fee }}</p>
+                                <p>Starting Date : {{ $latestCourse->c_start_date }}</p>
+                                <hr>
+                                <a href="{{ route('course-details',['id'=>$latestCourse->id] )}}" class="btn btn-success rounded-0">Details</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-3 rounded-0 border-0 shadow">
-                        <img src="{{asset('/')}}website/images/webdesin1.jpg" style="height: 200px;" alt="not Found" class="card-img-top rounded-0">
-
-                        <div class="card-body">
-                            <h3>Course 1</h3>
-                            <p>Instructor Name</p>
-                            <p>Price: 1233 Tk</p>
-                            <p>Starting Date: 23-12-2022</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-3 rounded-0 border-0 shadow">
-                        <img src="{{asset('/')}}website/images/webdesin2.jpg" style="height: 200px;" alt="not Found" class="card-img-top rounded-0">
-
-                        <div class="card-body">
-                            <h3>Course 1</h3>
-                            <p>Instructor Name</p>
-                            <p>Price: 1233 Tk</p>
-                            <p>Starting Date: 23-12-2022</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card mb-3 rounded-0 border-0 shadow">
-                        <img src="{{asset('/')}}website/images/workstyle1.png" style="height: 200px;" alt="not Found" class="card-img-top rounded-0">
-
-                        <div class="card-body">
-                            <h3>Course 1</h3>
-                            <p>Instructor Name</p>
-                            <p>Price: 1233 Tk</p>
-                            <p>Starting Date: 23-12-2022</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-3 rounded-0 border-0 shadow">
-                        <img src="{{asset('/')}}website/images/wbslider2.jpg" style="height: 200px;" alt="not Found" class="card-img-top rounded-0">
-
-                        <div class="card-body">
-                            <h3>Course 1</h3>
-                            <p>Instructor Name</p>
-                            <p>Price: 1233 Tk</p>
-                            <p>Starting Date: 23-12-2022</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-3 rounded-0 border-0 shadow">
-                        <img src="{{asset('/')}}website/images/contactus.jpg" style="height: 200px;" alt="not Found" class="card-img-top rounded-0">
-
-                        <div class="card-body">
-                            <h3>Course 1</h3>
-                            <p>Instructor Name</p>
-                            <p>Price: 1233 Tk</p>
-                            <p>Starting Date: 23-12-2022</p>
-                            <hr>
-                            <a href="{{ route('course-details') }}" class="btn btn-outline-success rounded-0">View More</a>
-
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
 
             </div>

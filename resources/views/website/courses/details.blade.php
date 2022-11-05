@@ -25,20 +25,26 @@
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="{{asset('/')}}website/images/wbslider2.jpg"  alt="not Found" class="card-img-top h-100 rounded-0">
+                                    <img src="{{asset($detailsCourse->c_image )}}"  alt="not Found" style="height: 200px;" class="card-img-top rounded-0">
 
                                 </div>
 
                                 <div class="col-md-6">
-                                    <h2>Course Name</h2>
-                                    <h4>Teacher Name</h4>
-                                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur ipsum perspiciatis ullam. Ab debitis dolores ducimus et fuga maiores maxime minus, odio quibusdam quos sapiente tempore veniam vero voluptatem.</p>
-                                    <p>Price: 2333 Tk</p>
-                                    <p>Starting date: 12-12-2022</p>
+                                    <h2>{{ $detailsCourse->c_title }}</h2>
+                                    <h4>{{ $detailsCourse->t_name }}</h4>
+                                    <p>Price: {{ $detailsCourse->c_fee }} Tk</p>
+                                    <p>Duration: {{ $detailsCourse->c_duration }} Month</p>
+                                    <p>Starting date: {{ $detailsCourse->c_start_date }}</p>
                                     <hr>
                                     <a href="#" class="btn btn-success rounded-0">Enroll Now</a>
                                 </div>
                             </div>
+
+                            <div class="row m-4">
+                                {!! $detailsCourse->c_description !!}
+                            </div>
+
+
 
                         </div>
                     </div>

@@ -3,17 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('website.home.index');
+       $coursesWithTeacher = DB::table('courses')
+            ->join('teachers','teachers.id','courses.teacher_id')
+            ->select('teachers.*','courses.*')
+            ->latest('courses.id','DESC')
+            ->take(4)
+            ->where('c_status',1)
+            ->get();
+        return view('website.home.index',[
+            'latestCourses' => $coursesWithTeacher,
+        ]);
     }
 
-    public function courseDetails()
+    public function courseDetails($id)
     {
-        return view('website.courses.details');
+
+        $coursesWithTeacher = DB::table('courses')
+            ->join('teachers','teachers.id','courses.teacher_id')
+            ->select('teachers.*','courses.*')
+            ->latest('courses.id','DESC')
+            ->take(4)
+            ->where('courses.id',$id)
+            ->first();
+        return view('website.courses.details',[
+            'detailsCourse'=>$coursesWithTeacher,
+        ]);
     }
 
     public function about()
@@ -23,7 +43,15 @@ class HomeController extends Controller
 
     public function allCourse()
     {
-        return view('website.courses.index');
+        $coursesWithTeacher = DB::table('courses')
+            ->join('teachers','teachers.id','courses.teacher_id')
+            ->select('teachers.*','courses.*')
+            ->take(8)
+            ->where('c_status',1)
+            ->get();
+        return view('website.courses.index',[
+            'latestCourses' => $coursesWithTeacher,
+        ]);
     }
 
     public function contactUs()
