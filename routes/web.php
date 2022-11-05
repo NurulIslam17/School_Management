@@ -30,7 +30,8 @@ Route::post('/teacher/create-course',[CourseController::class,'createCourse'])->
 
 Route::get('/teacher/delete-course/{id}',[CourseController::class,'deleteCourse'])->name('delete.course');
 Route::get('/teacher/edit-course/{id}',[CourseController::class,'editCourse'])->name('edit.course');
-Route::post('/teacher/update.course',[CourseController::class,'updateCourse'])->name('update.course');
+Route::post('/teacher/update-course',[CourseController::class,'updateCourse'])->name('update.course');
+Route::get('/teacher/details-course/{id}',[CourseController::class,'detailsCourse'])->name('details.course');
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {

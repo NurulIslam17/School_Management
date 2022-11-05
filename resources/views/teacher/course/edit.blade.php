@@ -11,7 +11,6 @@
                     <div class="card rounded-0">
                         <div class="card-body">
                             <h2 class="text-center mb-4">Edit Course Information</h2>
-                            <h3 class="text-center text-success">{{session('success')}}</h3>
 
                             <form action="{{ route('update.course') }}" method="post" enctype="multipart/form-data">
                                 @csrf

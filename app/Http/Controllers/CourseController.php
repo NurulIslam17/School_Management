@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use DB;
 
 class CourseController extends Controller
 {
@@ -34,5 +35,18 @@ class CourseController extends Controller
         $id = $request->updateId;
         Course::updateCourseData($request,$id);
         return redirect()->route('manage.course')->with('message','Course Updated');
+    }
+
+    //detailsCourse
+    public function detailsCourse($id)
+    {
+//        return $courseAndTeacher = DB::table('courses')
+//            ->join('teachers','teachers.id','courses.teacher_id')
+//            ->select('teachers.*','courses.*')
+//            ->get();
+        return view('teacher.course.details',[
+            'courseDetails' => Course::find($id),
+//            'teacher' => $courseAndTeacher,
+        ]);
     }
 }

@@ -42,11 +42,14 @@
                                 <td>{{$course->c_duration}}</td>
                                 <td>{{$course->c_status == 1 ? 'Published' : 'Unpublished'}}</td>
                                 <td>
-                                    <a href="{{ route('edit.course',['id'=>$course->id]) }}">
+                                    <a href="{{ route('details.course',['id'=>$course->id]) }}" title="Details">
+                                        <i class="fa fa-book-open btn btn-info rounded-0"></i>
+                                    </a>
+                                    <a href="{{ route('edit.course',['id'=>$course->id]) }}" title="Edit Data">
                                         <i class="fa fa-edit btn btn-success rounded-0"></i>
                                     </a>
 
-                                    <a href="{{ route('delete.course',['id'=>$course->id]) }}" onclick="return confirm('Are you sure ?');">
+                                    <a href="{{ route('delete.course',['id'=>$course->id]) }}" title="Delete Data" onclick="return confirm('Are you sure ?');">
                                         <i class="fa fa-trash btn btn-danger rounded-0"></i>
                                     </a>
 
