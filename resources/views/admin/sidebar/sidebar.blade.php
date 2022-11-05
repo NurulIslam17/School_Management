@@ -32,8 +32,7 @@
                         <span>Course Module</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="layouts-horizontal.html">Horizontal</a></li>
-                        <li><a href="layouts-light-sidebar.html">Light Sidebar</a></li>
+                        <li><a href="{{ route('admin.manage.course') }}">Manage Course</a></li>
                     </ul>
                 </li>
 

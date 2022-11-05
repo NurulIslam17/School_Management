@@ -7,6 +7,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\TeacherDashboardController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\AdminCourseController;
 
 
 Route::get('/',[HomeController::class,'index'])->name('home');
@@ -45,4 +46,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/update-teacher',[TeacherController::class,'updateTeacher'])->name('update.teacher');
     Route::get('/delete-teacher/{id}',[TeacherController::class,'deleteTeacher'])->name('delete.teacher');
     Route::get('/change-status/{id}',[TeacherController::class,'changeStatus'])->name('change.status');
+
+    Route::get('/admin-manage-course',[AdminCourseController::class,'adminManageCourse'])->name('admin.manage.course');
+    Route::get('/change-course-status/{id}',[AdminCourseController::class,'changeCourseStatus'])->name('change.course.status');
 });
