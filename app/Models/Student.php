@@ -18,7 +18,7 @@ class Student extends Model
         self::$student->email       = $request->email;
         self::$student->mobile      = $request->mobile;
         self::$student->password    = bcrypt($request->mobile);
-        
+
         self::$student->save();
         return self::$student;
     }

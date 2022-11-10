@@ -9,6 +9,7 @@ use App\Http\Controllers\TeacherDashboardController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdminCourseController;
 use App\Http\Controllers\EnrollController;
+use App\Http\Controllers\StudentAuthController;
 
 
 Route::get('/',[HomeController::class,'index'])->name('home');
@@ -37,6 +38,10 @@ Route::get('/teacher/delete-course/{id}',[CourseController::class,'deleteCourse'
 Route::get('/teacher/edit-course/{id}',[CourseController::class,'editCourse'])->name('edit.course');
 Route::post('/teacher/update-course',[CourseController::class,'updateCourse'])->name('update.course');
 Route::get('/teacher/details-course/{id}',[CourseController::class,'detailsCourse'])->name('details.course');
+
+
+Route::post('/student-login',[StudentAuthController::class,'studentLogin'])->name('student-login');
+Route::get('/student-logout',[StudentAuthController::class,'studentLogout'])->name('student.logout');
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {

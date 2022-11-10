@@ -23,8 +23,21 @@
                         <li><a href="{{ route('about') }}" class="nav-link">About</a></li>
                         <li><a href="{{ route('courses') }}" class="nav-link">Courses</a></li>
                         <li><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
-                        <li><a href="{{ route('font-login') }}" class="nav-link">Login</a></li>
-                        <li><a href="{{ route('font-register') }}" class="nav-link">Register</a></li>
+
+                        @if(Session::get('student_id'))
+                            <li class="dropdown">
+                                <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >{{ Session::get('student_name') }}</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="" class="dropdown-item" > Dashboard</a></li>
+                                    <li><a href="{{ route('student.logout') }}" class="dropdown-item" > Logout</a></li>
+                                </ul>
+                            </li>
+                        @else
+                            <li><a href="{{ route('font-login') }}" class="nav-link">Login</a></li>
+                            <li><a href="{{ route('font-register') }}" class="nav-link">Register</a></li>
+                        @endif
+
+
                     </ul>
                 </div>
             </div>

@@ -20,8 +20,9 @@
 
                                     <h3 class="text-center">Login</h3>
                                     <hr>
+                                    <p class="text-danger text-center">{{ Session::get('message') }}</p>
 
-                                    <form action="">
+                                    <form action="{{ route('student-login') }}" method="post">
                                         @csrf
                                         <div class="row mb-3 mt-2">
                                             <label class="col-md-4" for="">Email</label>

@@ -17,7 +17,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-8 mx-auto">
+                <div class="col-md-10 mx-auto">
 
                     <div class="card card-body rounded-0">
                         <div class="row">
@@ -31,33 +31,44 @@
                                     <hr>
 
                                     <form action="{{ route('enroll.new.course',['id'=>$course->id]) }}" method="post">
+                                        <h4 class="text-center text-success">{{ Session::get('success') }}</h4>
                                         @csrf
                                         <div class="row mb-3 mt-2">
                                             <label class="col-md-4" for="">Full Name</label>
                                             <div class="col-md-8">
-                                                <input type="text" name="name" placeholder="Enter Full Name" class="form-control rounded-0">
+                                                <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter Full Name" class="form-control rounded-0">
+
+                                                @error('name')
+                                                <p class="text-danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
 
                                         <div class="row mb-3 mt-2">
                                             <label class="col-md-4" for="">Email</label>
                                             <div class="col-md-8">
-                                                <input type="email" name="email" placeholder="Enter Email" class="form-control rounded-0">
+                                                <input type="email" name="email" value="{{ old('email') }}" placeholder="Enter Email" class="form-control rounded-0">
+                                                @error('email')
+                                                <p class="text-danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
 
                                         <div class="row mb-3 mt-2">
                                             <label class="col-md-4" for="">Mobile</label>
                                             <div class="col-md-8">
-                                                <input type="text" name="mobile" placeholder="Enter mobile" class="form-control rounded-0">
+                                                <input type="text" name="mobile" value="{{ old('phone') }}" placeholder="Enter mobile" class="form-control rounded-0">
+                                                @error('mobile')
+                                                <p class="text-danger">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
 
                                         <div class="row mb-3">
                                             <label class="col-md-4" for="">Payment</label>
                                             <div class="col-md-8">
-                                                <input type="radio" name="enroll_type" checked value="Cash"> Cash
-                                                <input type="radio" name="enroll_type" value="Online"> Online
+                                                <input type="radio" name="payment_type" checked value="Cash"> Cash
+                                                <input type="radio" name="payment_type" value="Online"> Online
                                             </div>
                                         </div>
 
