@@ -36,7 +36,7 @@
                                     <p>Duration: {{ $detailsCourse->c_duration }} Month</p>
                                     <p>Starting date: {{ $detailsCourse->c_start_date }}</p>
                                     <hr>
-                                    <a href="#" class="btn btn-success rounded-0">Enroll Now</a>
+                                    <a href="{{ route('new.enroll',['id'=>$detailsCourse->id]) }}" class="btn btn-success rounded-0">Enroll Now</a>
                                 </div>
                             </div>
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\TeacherDashboardController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdminCourseController;
+use App\Http\Controllers\EnrollController;
 
 
 Route::get('/',[HomeController::class,'index'])->name('home');
@@ -17,6 +18,8 @@ Route::get('/contact-us',[HomeController::class,'contactUs'])->name('contact');
 Route::get('/font-login',[HomeController::class,'fontLogin'])->name('font-login');
 Route::get('/font-register',[HomeController::class,'fontRegister'])->name('font-register');
 Route::get('/details/{id}',[HomeController::class,'courseDetails'])->name('course-details');
+
+Route::get('/new-enroll/{id}',[EnrollController::class,'newEnroll'])->name('new.enroll');
 
 
 Route::get('/teacher/login',[TeacherAuthController::class,'loginForm'])->name('teacher.login');
