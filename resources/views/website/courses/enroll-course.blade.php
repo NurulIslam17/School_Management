@@ -9,11 +9,13 @@
 @section('body')
     <section class="py-5">
         <div class="container">
+
             <div class="row bg-info">
                 <div class="col">
                     <h3 class="text-center py-3">Your Selected Course is {{ $course->c_title }}</h3>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-8 mx-auto">
 
@@ -28,12 +30,12 @@
                                     <h3 class="text-center">Enrollment</h3>
                                     <hr>
 
-                                    <form action="">
+                                    <form action="{{ route('enroll.new.course',['id'=>$course->id]) }}" method="post">
                                         @csrf
                                         <div class="row mb-3 mt-2">
                                             <label class="col-md-4" for="">Full Name</label>
                                             <div class="col-md-8">
-                                                <input type="text" name="full_name" placeholder="Enter Full Name" class="form-control rounded-0">
+                                                <input type="text" name="name" placeholder="Enter Full Name" class="form-control rounded-0">
                                             </div>
                                         </div>
 
@@ -45,9 +47,9 @@
                                         </div>
 
                                         <div class="row mb-3 mt-2">
-                                            <label class="col-md-4" for="">Phone</label>
+                                            <label class="col-md-4" for="">Mobile</label>
                                             <div class="col-md-8">
-                                                <input type="text" name="phone" placeholder="Enter Phone" class="form-control rounded-0">
+                                                <input type="text" name="mobile" placeholder="Enter mobile" class="form-control rounded-0">
                                             </div>
                                         </div>
 

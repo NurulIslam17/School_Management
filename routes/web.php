@@ -20,6 +20,7 @@ Route::get('/font-register',[HomeController::class,'fontRegister'])->name('font-
 Route::get('/details/{id}',[HomeController::class,'courseDetails'])->name('course-details');
 
 Route::get('/new-enroll/{id}',[EnrollController::class,'newEnroll'])->name('new.enroll');
+Route::post('/enroll-new-course/{id}',[EnrollController::class,'enrollNewCourse'])->name('enroll.new.course');
 
 
 Route::get('/teacher/login',[TeacherAuthController::class,'loginForm'])->name('teacher.login');
