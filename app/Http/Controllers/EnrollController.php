@@ -10,33 +10,51 @@ use Session;
 
 class EnrollController extends Controller
 {
-    public $student;
+    public $student,$alreadyEnroll;
+
+
     public function newEnroll($id)
     {
-//        return Course::find($id);
+        //return Course::find($id);
+
+        if(Session::get('student_id'))
+        {
+            $this->alreadyEnroll = Student::find(Session::get('student_id'));
+        }
+
         return view('website.courses.enroll-course',[
             'course'=>Course::find($id),
+            'alreadyEnrolled' => $this->alreadyEnroll,
         ]);
     }
 
     public function enrollNewCourse(Request $request ,$id)
     {
 
-        $validated = $request->validate([
-            'name' => 'required|max:55',
-            'email' => 'required|unique:students|max:25',
-            'mobile' => 'required|unique:students|max:20|min:11',
-        ],[
-            'name.required' => 'This field require a information',
-            'email.required' => 'This field require a information',
-            'mobile.required' => 'This field require a information',
+        if(Session::get('student_id'))
+        {
+            $this->student=Student::find(Session::get('student_id'));
+        }
+        else{
 
-            'email.unique' => 'Enter Unique email',
-            'mobile.unique' => 'Enter Unique Mobile number',
-        ]);
+            $validated = $request->validate([
+                'name' => 'required|max:55',
+                'email' => 'required|unique:students|max:25',
+                'mobile' => 'required|unique:students|max:20|min:11',
+            ],[
+                'name.required' => 'This field require a information',
+                'email.required' => 'This field require a information',
+                'mobile.required' => 'This field require a information',
 
+                'email.unique' => 'Enter Unique email',
+                'mobile.unique' => 'Enter Unique Mobile number',
+            ]);
 
-        $this->student=Student::newStudent($request);
+            $this->student=Student::newStudent($request);
+        }
+
+//
+//        $this->student=Student::newStudent($request);
 
         Session::put('student_id',$this->student->id);
         Session::put('student_name',$this->student->name);

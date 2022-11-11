@@ -36,7 +36,12 @@
                                         <div class="row mb-3 mt-2">
                                             <label class="col-md-4" for="">Full Name</label>
                                             <div class="col-md-8">
-                                                <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter Full Name" class="form-control rounded-0">
+
+                                                @if(isset($alreadyEnrolled->name))
+                                                <input type="text" name="name" value="{{$alreadyEnrolled->name}}" class="form-control rounded-0">
+                                                @else
+                                                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter Full Name" class="form-control rounded-0">
+                                                @endif
 
                                                 @error('name')
                                                 <p class="text-danger">{{ $message }}</p>
@@ -47,7 +52,12 @@
                                         <div class="row mb-3 mt-2">
                                             <label class="col-md-4" for="">Email</label>
                                             <div class="col-md-8">
+                                                @if(isset($alreadyEnrolled->email))
+                                                    <input type="text" name="email" value="{{$alreadyEnrolled->email}}" class="form-control rounded-0">
+                                                @else
                                                 <input type="email" name="email" value="{{ old('email') }}" placeholder="Enter Email" class="form-control rounded-0">
+                                                @endif
+
                                                 @error('email')
                                                 <p class="text-danger">{{ $message }}</p>
                                                 @enderror
@@ -57,7 +67,11 @@
                                         <div class="row mb-3 mt-2">
                                             <label class="col-md-4" for="">Mobile</label>
                                             <div class="col-md-8">
-                                                <input type="text" name="mobile" value="{{ old('phone') }}" placeholder="Enter mobile" class="form-control rounded-0">
+                                                @if(isset($alreadyEnrolled->mobile))
+                                                    <input type="text" name="mobile" value="{{$alreadyEnrolled->mobile}}" class="form-control rounded-0">
+                                                @else
+                                                <input type="text" name="mobile" value="{{ old('mobile') }}" placeholder="Enter mobile" class="form-control rounded-0">
+                                                @endif
                                                 @error('mobile')
                                                 <p class="text-danger">{{ $message }}</p>
                                                 @enderror
