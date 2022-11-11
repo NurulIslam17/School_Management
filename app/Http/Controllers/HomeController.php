@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enroll;
 use Illuminate\Http\Request;
 use DB;
+use Session;
 
 class HomeController extends Controller
 {
+
     public function index()
     {
        $coursesWithTeacher = DB::table('courses')
@@ -31,8 +34,28 @@ class HomeController extends Controller
             ->take(4)
             ->where('courses.id',$id)
             ->first();
+
+        if(Session::get('student_id'))
+        {
+            $enrollStatus = Enroll::where('student_id',Session::get('student_id'))
+                ->where('course_id',$id)
+                ->first();
+
+            if($enrollStatus)
+            {
+                 $status = 1;
+            }
+            else{
+                $status = 0;
+            }
+        }
+        else{
+            $status = 0;
+        }
+
         return view('website.courses.details',[
             'detailsCourse'=>$coursesWithTeacher,
+            'enrollStat' => $status,
         ]);
     }
 

@@ -36,7 +36,13 @@
                                     <p>Duration: {{ $detailsCourse->c_duration }} Month</p>
                                     <p>Starting date: {{ $detailsCourse->c_start_date }}</p>
                                     <hr>
-                                    <a href="{{ route('new.enroll',['id'=>$detailsCourse->id]) }}" class="btn btn-success rounded-0">Enroll Now</a>
+                                    @if($enrollStat == 1)
+                                        <h5 class="text-success"> <span class="text-danger">*</span>You're already enrolled in this course</h5>
+                                    @else
+                                        <a href="{{ route('new.enroll',['id'=>$detailsCourse->id]) }}"  class="btn btn-success rounded-0">Enroll Now</a>
+
+                                    @endif
+
                                 </div>
                             </div>
 
