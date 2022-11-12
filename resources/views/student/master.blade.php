@@ -12,7 +12,7 @@
                 <div class="card card-body rounded-0">
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('student.dashboard') }}" class="nav-link border-bottom">Dashboard</a></li>
-                        <li><a href="" class="nav-link border-bottom">Profile</a></li>
+                        <li><a href="{{ route('student.profile') }}" class="nav-link border-bottom">Profile</a></li>
                         <li><a href="" class="nav-link border-bottom">All Courses</a></li>
                         <li><a href="" class="nav-link border-bottom">Account</a></li>
                         <li><a href="{{ route('student.logout') }}" class="nav-link border-bottom">Logout</a></li>
@@ -23,7 +23,7 @@
 
             <div class="col-md-9">
                 <div class="card card-body rounded-0">
-                    <h4>Dashboard</h4>
+                    @yield('dashboard')
 
                 </div>
             </div>
