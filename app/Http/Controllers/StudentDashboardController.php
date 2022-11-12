@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
+use Session;
 
 class StudentDashboardController extends Controller
 {
@@ -13,7 +15,12 @@ class StudentDashboardController extends Controller
 
     public function studentProfile()
     {
-        return view('student.profile.profile');
+        if(Session::get('student_id')){
+            $studentProfileInfo = Student::find(Session::get('student_id'));
+        }
+        return view('student.profile.profile',[
+            'studentProfileInfo' =>$studentProfileInfo,
+        ]);
     }
 
 
