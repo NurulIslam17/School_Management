@@ -23,5 +23,23 @@ class StudentDashboardController extends Controller
         ]);
     }
 
+    public function updateProfile($id)
+    {
+        $editZProfile = Student::where('id',Session::get('student_id'))->first();
+
+        return view('student.profile.update',[
+            'editData' => $editZProfile,
+        ]);
+    }
+
+    public function updateProfileData(Request $request)
+    {
+
+//        return $request;
+        $id = $request->updateById;
+        Student::updateProfile($request,$id);
+        return back()->with('message','Profile Updated Successfully');
+    }
+
 
 }

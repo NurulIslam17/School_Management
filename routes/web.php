@@ -46,6 +46,8 @@ Route::get('/student-logout',[StudentAuthController::class,'studentLogout'])->na
 
 Route::get('/student/dashboard',[StudentDashboardController::class,'studentDashboard'])->name('student.dashboard');
 Route::get('/student-profile',[StudentDashboardController::class,'studentProfile'])->name('student.profile');
+Route::get('/update-profile/{id}',[StudentDashboardController::class,'updateProfile'])->name('update.profile');
+Route::post('/update-profile-data',[StudentDashboardController::class,'updateProfileData'])->name('update.profile.data');
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {

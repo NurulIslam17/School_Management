@@ -10,15 +10,15 @@
                     </div>
 
                     <div class="card-header">
-                        <img src="{{asset($studentProfileInfo->image)}}" alt="Not found" style="height: 200px:">
+                        <img src="{{asset($studentProfileInfo->image)}}" alt="Not found" style="height: 200px;width: 100%">
 
                         <h6>Name : {{ $studentProfileInfo->name }}</h6>
                         <h6>Email : {{ $studentProfileInfo->email }}</h6>
                         <h6>Contact : {{ $studentProfileInfo->mobile }}</h6>
                         <h6>Address : {{ $studentProfileInfo->address }}</h6>
-                        <h6>Status : {{ $studentProfileInfo->status }}</h6>
+                        <h6>Status : {{ $studentProfileInfo->status == 1 ? 'Active' : 'Inactive' }}</h6>
                         <hr>
-                        <a href="" class="btn btn-success rounded-0">Update Profile</a>
+                        <a href="{{ route('update.profile',['id'=>$studentProfileInfo->id]) }}" class="btn btn-success rounded-0">Update Profile</a>
                     </div>
                 </div>
             </div>
