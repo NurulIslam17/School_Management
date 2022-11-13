@@ -13,7 +13,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('student.dashboard') }}" class="nav-link border-bottom">Dashboard</a></li>
                         <li><a href="{{ route('student.profile') }}" class="nav-link border-bottom">Profile</a></li>
-                        <li><a href="" class="nav-link border-bottom">All Courses</a></li>
+                        <li><a href="{{ route('all.dashboard.courses') }}" class="nav-link border-bottom">All Courses</a></li>
                         <li><a href="" class="nav-link border-bottom">Account</a></li>
                         <li><a href="{{ route('student.logout') }}" class="nav-link border-bottom">Logout</a></li>
                     </ul>

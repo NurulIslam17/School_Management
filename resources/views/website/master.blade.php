@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{asset('/')}}website/css/all.css">
     <link rel="stylesheet" href="{{asset('/')}}website/css/bootstrap.css">
     <link rel="stylesheet" href="{{asset('/')}}website/css/style.css">
+    
+    <link rel="stylesheet" href="cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
 </head>
     <body class="d-flex flex-column min-vh-100">
@@ -112,4 +114,15 @@
         <script src="{{asset('/')}}website/js/bootstrap.bundle.min.js"></script>
         <script src="{{asset('/')}}website/js/action.js"></script>
     </body>
+
+// table
+<script src="cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+</script>
+
+
 </html>

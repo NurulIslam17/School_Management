@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Session;
+use DB;
 
 class StudentDashboardController extends Controller
 {
@@ -39,6 +40,20 @@ class StudentDashboardController extends Controller
         $id = $request->updateById;
         Student::updateProfile($request,$id);
         return back()->with('message','Profile Updated Successfully');
+    }
+
+    public function allDashboardCourses()
+    {
+        $enrollCourse = DB::table('enrolls')
+            ->join('courses','courses.id','enrolls.course_id')
+//            ->join('teachers','courses.teacher_id')
+            ->where('enrolls.student_id', Session::get('student_id'))
+            ->get();
+
+//        return  $enrollCourse;
+        return view('student.course.all-profile-course',[
+            'enrollCourses' => $enrollCourse,
+        ]);
     }
 
 
