@@ -48,6 +48,7 @@ class StudentDashboardController extends Controller
             ->join('courses','courses.id','enrolls.course_id')
 //            ->join('teachers','courses.teacher_id')
             ->where('enrolls.student_id', Session::get('student_id'))
+
             ->get();
 
 //        return  $enrollCourse;

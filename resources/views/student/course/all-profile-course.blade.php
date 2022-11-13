@@ -9,15 +9,15 @@
                 </div>
 
                 <div class="card-body">
-                    <table class="table table-bordered table-striped" id="myTable">
+                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
-                            <tr class="bg-info">
-                                <th>Image </th>
-                                <th>Name </th>
-                                <th>Teacher </th>
-                                <th>Phone </th>
-                                <th>Status </th>
-
+                            <tr>
+                                <th>Image</th>
+                                <th>Course</th>
+                                <th>Teacher</th>
+                                <th>Contact</th>
+                                <th>Start On</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
 
@@ -25,19 +25,22 @@
                             @foreach($enrollCourses as $enrollCourse)
                                 <tr>
                                     <td>
-                                        <img src="{{ $enrollCourse->c_image  }}" style="height: 50px;width: 50px;" alt="">
+                                        <img src="{{ $enrollCourse->c_image }}" style="height: 50px;width: 50px;" alt="">
                                     </td>
-                                    <td>{{ $enrollCourse->c_title  }}</td>
-                                    <td>{{ $enrollCourse->teacher_id  }}</td>
-                                    <td>{{ $enrollCourse->teacher_id  }}</td>
-                                    <td>{{ $enrollCourse->enroll_status == 'Pending' ? 'Pending' : 'Active'  }}</td>
+                                    <td>{{ $enrollCourse->c_title }}</td>
+                                    <td>{{ $enrollCourse->teacher_id }}</td>
+                                    <td>01XXXXXXXXX</td>
+                                    <td>{{ $enrollCourse->c_start_date }}</td>
+                                    <td>{{ $enrollCourse->enroll_status == 'Pending' ? 'Pending' : 'Active' }}</td>
                                 </tr>
-
                             @endforeach
                         </tbody>
+
+
                     </table>
 
                 </div>
+
             </div>
         </div>
     </div>

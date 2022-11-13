@@ -22,4 +22,9 @@ class Enroll extends Model
 
         self::$enroll->save();
     }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }

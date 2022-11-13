@@ -8,8 +8,24 @@
     <link rel="stylesheet" href="{{asset('/')}}website/css/all.css">
     <link rel="stylesheet" href="{{asset('/')}}website/css/bootstrap.css">
     <link rel="stylesheet" href="{{asset('/')}}website/css/style.css">
-    
-    <link rel="stylesheet" href="cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+
+
+    {{--    table--}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css" integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- DataTables -->
+    <link href="{{asset('/')}}admin/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}admin/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="{{asset('/')}}admin/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Css -->
+    <link href="{{asset('/')}}admin/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{asset('/')}}admin/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{asset('/')}}admin/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
 </head>
     <body class="d-flex flex-column min-vh-100">
@@ -113,16 +129,28 @@
         <script src="{{asset('/')}}website/js/jquery-3.6.0.min.js"></script>
         <script src="{{asset('/')}}website/js/bootstrap.bundle.min.js"></script>
         <script src="{{asset('/')}}website/js/action.js"></script>
+
+        <!-- Required datatable js -->
+        <script src="{{ asset('/') }}admin/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="{{ asset('/') }}admin/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="{{ asset('/') }}admin/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="{{ asset('/') }}admin/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+        <script src="{{ asset('/') }}admin/assets/libs/jszip/jszip.min.js"></script>
+        <script src="{{ asset('/') }}admin/assets/libs/pdfmake/build/pdfmake.min.js"></script>
+        <script src="{{ asset('/') }}admin/assets/libs/pdfmake/build/vfs_fonts.js"></script>
+        <script src="{{ asset('/') }}admin/assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="{{ asset('/') }}admin/assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="{{ asset('/') }}admin/assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+
+        <!-- Responsive examples -->
+        <script src="{{ asset('/') }}admin/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="{{ asset('/') }}admin/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+        <!-- Datatable init js -->
+        <script src="{{ asset('/') }}admin/assets/js/pages/datatables.init.js"></script>
+
+        <script src="{{ asset('/') }}admin/assets/js/app.js"></script>
+
     </body>
-
-// table
-<script src="cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-
-<script>
-    $(document).ready( function () {
-        $('#myTable').DataTable();
-    } );
-</script>
-
-
 </html>
