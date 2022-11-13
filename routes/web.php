@@ -67,4 +67,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/change-course-status/{id}',[AdminCourseController::class,'changeCourseStatus'])->name('change.course.status');
 
     Route::get('/manage-enroll',[DashboardController::class,'manageEnroll'])->name('manage.enroll');
+    Route::get('/enroll-status/{id}',[DashboardController::class,'enrollStatus'])->name('enroll.status');
 });

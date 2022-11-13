@@ -62,4 +62,5 @@ class Student extends Model
 
         self::$student->save();
     }
+
 }

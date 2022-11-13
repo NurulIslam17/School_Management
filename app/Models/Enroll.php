@@ -23,8 +23,28 @@ class Enroll extends Model
         self::$enroll->save();
     }
 
+    public static function changeStatus($id)
+    {
+        self::$enroll = Enroll::find($id);
+        if(self::$enroll->enroll_status == 'Pending')
+        {
+            self::$enroll->enroll_status = 'Completed';
+            self::$enroll->save();
+        }
+        else{
+            self::$enroll->enroll_status = 'Pending';
+            self::$enroll->save();
+        }
+    }
+
     public function course()
     {
         return $this->belongsTo(Course::class);
     }
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
+
 }

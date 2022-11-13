@@ -13,9 +13,15 @@ class DashboardController extends Controller
     }
     public  function manageEnroll()
     {
-        $enrollInfo = Enroll::get();
+        $enrollInfo = Enroll::latest()->get();
         return view('admin.enroll.manage',[
             'allEnrollInfo'=>$enrollInfo,
         ]);
+    }
+
+    public function enrollStatus($id)
+    {
+        Enroll::changeStatus($id);
+        return back()->with('success','Enroll status updated');
     }
 }
