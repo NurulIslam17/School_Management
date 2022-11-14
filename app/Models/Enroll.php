@@ -29,10 +29,7 @@ class Enroll extends Model
         if(self::$enroll->enroll_status == 'Pending')
         {
             self::$enroll->enroll_status = 'Completed';
-            self::$enroll->save();
-        }
-        else{
-            self::$enroll->enroll_status = 'Pending';
+            self::$enroll->payment_status = self::$enroll->course->c_fee ;
             self::$enroll->save();
         }
     }
