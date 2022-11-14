@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use DB;
+use Session;
 
 class TeacherDashboardController extends Controller
 {
@@ -23,6 +24,7 @@ class TeacherDashboardController extends Controller
             ->join('teachers','teachers.id','courses.teacher_id')
             ->select('teachers.*','courses.*')
             ->orderBy('courses.id','DESC')
+            ->where('teachers.id',Session::get('teacher_id'))
             ->get();
 
 //        return  $coursesWithTeacher;

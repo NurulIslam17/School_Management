@@ -3,14 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\TeacherDashboardController;
+use App\Http\Controllers\TeacherEnrollController;
+
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AdminCourseController;
 use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\StudentAuthController;
 use App\Http\Controllers\StudentDashboardController;
+
 
 
 Route::get('/',[HomeController::class,'index'])->name('home');
@@ -39,6 +43,9 @@ Route::get('/teacher/delete-course/{id}',[CourseController::class,'deleteCourse'
 Route::get('/teacher/edit-course/{id}',[CourseController::class,'editCourse'])->name('edit.course');
 Route::post('/teacher/update-course',[CourseController::class,'updateCourse'])->name('update.course');
 Route::get('/teacher/details-course/{id}',[CourseController::class,'detailsCourse'])->name('details.course');
+
+Route::get('/teacher/manage-enroll',[TeacherEnrollController::class,'manageEnroll'])->name('manage.enroll.student');
+
 
 
 Route::post('/student-login',[StudentAuthController::class,'studentLogin'])->name('student-login');

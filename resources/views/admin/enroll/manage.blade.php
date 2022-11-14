@@ -38,7 +38,7 @@
                                 <td>{{ $enrollInfo->student->name }}</td>
                                 <td>{{ $enrollInfo->student->mobile }}</td>
                                 <td>{{ $enrollInfo->course->c_start_date }}</td>
-                                <td>{{ $enrollInfo->payment_status == 'Pending' ? 'Pending' : $enrollInfo->payment_status  }} {{ $enrollInfo->payment_status == 'Pending' ? ' ' : 'Tk.'  }}</td>
+                                <td>{{ $enrollInfo->payment_status == 'Pending' ? 'Pending' : $enrollInfo->payment_status  }} </td>
                                 <td>{{ $enrollInfo->enroll_status === 'Pending' ? 'Pending' : 'Approved' }}</td>
 
                                 <td>

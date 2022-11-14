@@ -106,6 +106,16 @@
                         </ul>
 
                     </li>
+                    <li>
+                        <a href="{{ route('teacher.dashboard') }}" class="waves-effect">
+                            <i class="bx bx-home-circle"></i><span class="badge badge-pill badge-info float-right"></span>
+                            <span>Enroll Module</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="{{ route('manage.enroll.student') }}">Manage Enroll</a></li>
+                        </ul>
+
+                    </li>
                 </ul>
 
             </div>
