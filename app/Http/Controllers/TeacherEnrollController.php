@@ -12,16 +12,16 @@ class TeacherEnrollController extends Controller
     public  function manageEnroll()
     {
         $coursesUnderTeacher = Course::where('teacher_id',Session::get('teacher_id'))->get();
-//        return $coursesUnderTeacher;
+       //return $coursesUnderTeacher;
 
         foreach ($coursesUnderTeacher as $courseUnderTeacher)
         {
             $enrollInfo = Enroll::where('course_id',$courseUnderTeacher->id)
-                ->where('payment_status','Completed')
+                ->where('enroll_status','Completed')
                 ->get();
         }
 
-//    return $enrollInfo;
+        //return $enrollInfo;
 
         return view('teacher.enroll.manage',[
             'enrollInformation' => $enrollInfo,

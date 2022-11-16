@@ -47,17 +47,21 @@ Route::get('/teacher/details-course/{id}',[CourseController::class,'detailsCours
 Route::get('/teacher/manage-enroll',[TeacherEnrollController::class,'manageEnroll'])->name('manage.enroll.student');
 
 
-
+//Student Endpoints
 Route::post('/student-login',[StudentAuthController::class,'studentLogin'])->name('student-login');
-Route::get('/student-logout',[StudentAuthController::class,'studentLogout'])->name('student.logout');
+Route::middleware(['student'])->group( function (){
 
-Route::get('/student/dashboard',[StudentDashboardController::class,'studentDashboard'])->name('student.dashboard');
-Route::get('/student-profile',[StudentDashboardController::class,'studentProfile'])->name('student.profile');
-Route::get('/update-profile/{id}',[StudentDashboardController::class,'updateProfile'])->name('update.profile');
-Route::post('/update-profile-data',[StudentDashboardController::class,'updateProfileData'])->name('update.profile.data');
-Route::get('/all-dashboard-courses',[StudentDashboardController::class,'allDashboardCourses'])->name('all.dashboard.courses');
+    Route::get('/student-logout',[StudentAuthController::class,'studentLogout'])->name('student.logout');
+
+    Route::get('/student/dashboard',[StudentDashboardController::class,'studentDashboard'])->name('student.dashboard');
+    Route::get('/student-profile',[StudentDashboardController::class,'studentProfile'])->name('student.profile');
+    Route::get('/update-profile/{id}',[StudentDashboardController::class,'updateProfile'])->name('update.profile');
+    Route::post('/update-profile-data',[StudentDashboardController::class,'updateProfileData'])->name('update.profile.data');
+    Route::get('/all-dashboard-courses',[StudentDashboardController::class,'allDashboardCourses'])->name('all.dashboard.courses');
+});
 
 
+// Admin Endpoints
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
